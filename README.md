@@ -1,5 +1,5 @@
 # insurance-demand
-Project that forecasts the demand for auto and P&C insurance in the Mexican market.
+Project that forecasts and models the demand for auto and P&C insurance in the Mexican market.
 
 ## References
 
