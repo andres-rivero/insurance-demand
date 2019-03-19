@@ -1,5 +1,13 @@
-data <- read_csv("data.csv")
+library(tidyverse)
 
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+data <- read.csv("data.csv")
+
+data <- mutate(data,
+               year = year(
+                 dmy(
+                   fecha_nacimiento)))
 
 purchased <- function(x){
   if (x == "cerrado"){
@@ -19,6 +27,3 @@ purchased <- function(x){
 #  purchased(i)
 #})
 
-
-
-data$outcome <- sapply(data$estatus, FUN = purchased)
