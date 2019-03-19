@@ -1,11 +1,12 @@
 library(tidyverse)
+library(lubridate)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 data <- read.csv("data.csv")
 
 data <- mutate(data,
-               year = year(
+               db_year = year(
                  dmy(
                    fecha_nacimiento)))
 
@@ -27,3 +28,8 @@ purchased <- function(x){
 #  purchased(i)
 #})
 
+data$outcome <- sapply(data$estatus, FUN = purchased)
+
+
+mid_dbyear <- median(na.omit(data$db_year))
+mid_auto <- median(na.omit(data$db_year))
