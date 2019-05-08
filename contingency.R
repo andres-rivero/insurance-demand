@@ -22,6 +22,7 @@ purchased <- function(x){
   }
 }
 
+
 #outcome <- c()
 
 #for (i in data$estatus)  outcome <- c(outcome,{
